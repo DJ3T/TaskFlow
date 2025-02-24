@@ -21,7 +21,7 @@ cd TaskFlow
 ```
 If you don’t have Git, you can **download the ZIP file** from GitHub and extract it.
 
-### **2️⃣ Install Dependencies**
+### **2️⃣ Set Up the Virtual Environment & Install Dependencies**
 #### **Windows**
 ```sh
 python -m venv venv
@@ -34,6 +34,7 @@ python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
 ```
+This ensures all required Python packages (FastAPI, Uvicorn, SQLAlchemy) are installed.
 
 ### **3️⃣ Start the Application**
 #### **Option 1: Use the Python Script (All Platforms)**
@@ -102,4 +103,3 @@ This project is open-source under the **MIT License**.
 Feel free to **open an issue** on GitHub or reach out if you have questions or ideas for improvement!
 
 💡 This project is **not perfect**, but it’s an **experiment** in learning backend, frontend, and full-stack development! 🚀
-
