@@ -40,15 +40,16 @@ webbrowser.open(TASKFLOW_URL)
 # Function to check if the browser tab is still open
 def is_browser_open():
     try:
-        # Get a list of open Chrome tabs
         output = subprocess.check_output([
             "osascript", "-e",
             'tell application "Google Chrome" to get the URL of tabs of windows'
         ])
         urls = output.decode().split(", ")
+        print(f"🔍 Detected open tabs: {urls}")  # Debugging line
         return TASKFLOW_URL in urls
-    except subprocess.CalledProcessError:
-        return False  # Browser is closed or tab is gone
+    except subprocess.CalledProcessError as e:
+        print(f"⚠️ Browser check failed: {e}")  # Debugging line
+        return True  # Keep the program running even if the check fails
 
 # Monitor if the user closes the page
 try:
